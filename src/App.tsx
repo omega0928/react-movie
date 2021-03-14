@@ -38,6 +38,7 @@ function App() {
   const [selectData, setSelectData] = useState<SelectMovieInfo[]>([]);
   const [movies, setMovies] = useState<MoviesInfoArr[]>([]);
   const [inputData, setInputData] = useState<string>("");
+  console.log('movies',movies)
 
   useEffect(() => {
     selectedMovie();

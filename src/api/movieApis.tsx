@@ -1,13 +1,14 @@
 import axios from "axios";
 
 const API_ENDPOINT = "http://www.omdbapi.com/";
+const GOOAPI_KEY = "2a1864f6";
 const API_KEY = "1e32d500";
 
 const api = {
   fetchMovieList: async (page: number, inputData: string) => {
     try {
       const response = await axios.get(
-        `${API_ENDPOINT}/?apikey=${API_KEY}&page=${page}&s=${inputData}`
+        `${API_ENDPOINT}/?apikey=${GOOAPI_KEY}&page=${page}&s=${inputData}`
       );
       if (response.status === 200) {
         return response.data;
@@ -24,7 +25,7 @@ const api = {
   fetchMovieSelect: async (selectMovie: string) => {
     try {
       const response = await axios.get(
-        `${API_ENDPOINT}/?apikey=${API_KEY}&t=${selectMovie}`
+        `${API_ENDPOINT}/?apikey=${GOOAPI_KEY}&t=${selectMovie}`
       );
       if (response.status === 200) {
         return response.data;
